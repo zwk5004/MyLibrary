@@ -1,0 +1,20 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet author="zkampmann" id="20231023_1946_create_user_book_table" runOnChange="false">
+        <createTable tableName="user_book">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true" primaryKeyName="user_book_pk"/>
+            </column>
+            <column name="user_id" type="bigint">
+                <constraints foreignKeyName="fk_user" references="user(id)" nullable="false" />
+            </column>
+            <column name="book_id" type="bigint">
+                <constraints foreignKeyName="fk_book" references="book(id)" nullable="false" />
+            </column>
+            <column name="status" type="varchar(35)" />
+            <column name="rating" type="int" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

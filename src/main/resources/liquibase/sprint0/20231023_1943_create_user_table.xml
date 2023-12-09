@@ -1,0 +1,16 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.3.xsd">
+
+    <changeSet author="zkampmann" id="20231023_1943_create_user_table" runOnChange="false">
+
+        <createTable tableName="user">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true" primaryKeyName="user_pk"/>
+            </column>
+            <column name="username" type="varchar(75)" />
+            <column name="password" type="varchar(150)" />
+            <column name="is_admin" type="boolean" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
